@@ -3,7 +3,6 @@ String.UnitsToDecimals
 ----------------------
 Converts a list of strings with feet and inches to decimal numbers.
 """
-
 __author__ = "Marco Barboza"
 
 
@@ -49,19 +48,19 @@ def convert_feet(lst_vals):
     """
     Converts a list of strings with feet and inches to decimal numbers.
     """
-    total=[]
+    total = []
     for i in lst_vals:
         if(set("-").intersection(i)):
-            first=i.split("-")[0]
-            second=i.split("-")[1]
-            ft=convert_to_float(first)
-            inch=convert_to_float(second.split()[0])
+            first = i.split("-")[0]
+            second = i.split("-")[1]
+            ft = convert_to_float(first)
+            inch = convert_to_float(second.split()[0])
             try:
-                fraction=convert_to_float(second.split()[1])
+                fraction = convert_to_float(second.split()[1])
             except IndexError:
                 fraction = 0.0
         else:
-            term=i.split()
+            term = i.split()
             ft = convert_to_float(term[0])
             inch = convert_to_float(term[1])
             try:
