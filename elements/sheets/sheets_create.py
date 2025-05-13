@@ -5,10 +5,7 @@ Creates new sheets in the Revit document.
 The sheets will be created with the specified title block, name, and number.
 """
 
-import sys
 import clr
-
-import System
 
 clr.AddReference("RevitNodes")
 import Revit
