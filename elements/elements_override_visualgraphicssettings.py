@@ -23,14 +23,14 @@ import Autodesk
 from Autodesk.Revit.DB import *
 
 
-def ConvertColor(dynamo_color):
+def convert_to_revit_color(dynamo_color) -> Autodesk.Revit.DB.Color:
     """
     Converts a Dynamo color to a Revit color.
     """
     return Autodesk.Revit.DB.Color(dynamo_color.Red, dynamo_color.Green, dynamo_color.Blue)
 
 
-def OverrideElement(element, color, fill):
+def override_element(element, color, fill):
     """
     Overrides the visual graphic settings of a Revit element.
     """
@@ -45,12 +45,14 @@ def OverrideElement(element, color, fill):
 doc = DocumentManager.Instance.CurrentDBDocument
 
 elements = UnwrapElement(IN[0]) if isinstance(IN[0], list) else [UnwrapElement(IN[0])]
-color = ConvertColor(IN[1])
+color = convert_to_revit_color(IN[1])
 fill_pattern = UnwrapElement(IN[2])
 
+TransactionManager.Instance.EnsureInTransaction(doc)
+
 for e in elements:
-    TransactionManager.Instance.EnsureInTransaction(doc)
-    OverrideElement(e, color, fill_pattern)
-    TransactionManager.Instance.TransactionTaskDone()
+    override_element(e, color, fill_pattern)
+
+TransactionManager.Instance.TransactionTaskDone()
 
 OUT = elements
