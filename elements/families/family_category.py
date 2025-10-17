@@ -21,8 +21,7 @@ def get_dynamo_category(category) -> Revit.Elements.Category:
     """
     Retrieves a Dynamo category given a Revit category.
     """
-    dynamo_category = Revit.Elements.Category.ById(category.Id.Value)
-    return dynamo_category
+    return Revit.Elements.Category.ById(category.Id.Value)
 
 
 families = UnwrapElement(IN[0]) if isinstance(IN[0], list) else [UnwrapElement(IN[0])]

@@ -37,6 +37,7 @@ def get_unused_families(doc) -> list:
 
 
 doc = DocumentManager.Instance.CurrentDBDocument
+
 unused_families = get_unused_families(doc)
 
 OUT = unused_families if len(unused_families) > 1 else (unused_families[0] if unused_families else None)
