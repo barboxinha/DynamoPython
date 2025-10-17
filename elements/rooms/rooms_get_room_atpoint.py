@@ -16,9 +16,9 @@ clr.AddReference('RevitServices')
 from RevitServices.Persistence import DocumentManager
 
 
-def get_room_at_point(doc, point:XYZ, phase:Phase=None) -> Room:
+def get_room_at_point(doc, point_xyz, phase=None) -> Room:
     """Gets the room at the given point."""
-    return doc.GetRoomAtPoint(point) if phase is None else doc.GetRoomAtPoint(point, phase)
+    return doc.GetRoomAtPoint(point_xyz) if phase is None else doc.GetRoomAtPoint(point_xyz, phase)
 
 
 doc = DocumentManager.Instance.CurrentDBDocument

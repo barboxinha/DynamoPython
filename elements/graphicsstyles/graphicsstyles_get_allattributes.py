@@ -25,7 +25,7 @@ import Autodesk
 from Autodesk.Revit.DB import Document, GraphicsStyle, LinePatternElement, GraphicsStyleType, Color
 
 
-def get_graphics_style_line_weight(graphics_style: GraphicsStyle) -> int:
+def get_graphics_style_line_weight(graphics_style) -> int:
     """
     Gets the line weight assigned to a given GraphicsStyle.
     """
@@ -37,7 +37,7 @@ def get_graphics_style_line_weight(graphics_style: GraphicsStyle) -> int:
     return style_cat.GetLineWeight(GraphicsStyleType.Projection)
 
 
-def get_graphics_style_color(graphics_style: GraphicsStyle) -> Color:
+def get_graphics_style_color(graphics_style) -> Color:
     """
     Gets the line color assigned to a given GraphicsStyle.
     """
@@ -49,7 +49,7 @@ def get_graphics_style_color(graphics_style: GraphicsStyle) -> Color:
     return style_cat.LineColor
 
 
-def convert_db_color_to_dyn_color(db_color: Color) -> DSCore.Color:
+def convert_db_color_to_dyn_color(db_color) -> DSCore.Color:
     """
     Converts Revit object Autodesk.Revit.DB.Color to Dynamo object DSCore.Color.
     """
@@ -57,7 +57,7 @@ def convert_db_color_to_dyn_color(db_color: Color) -> DSCore.Color:
     return DSCore.Color.ByARGB(255, db_color.Red, db_color.Green, db_color.Blue)
 
 
-def get_graphics_style_line_pattern_name(_doc: Document, graphics_style: GraphicsStyle):
+def get_graphics_style_line_pattern_name(_doc, graphics_style) -> str:
     """
     Gets the LinePatternElement name assigned to a given GraphicsStyle.
     """

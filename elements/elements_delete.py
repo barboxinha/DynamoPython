@@ -17,7 +17,7 @@ from RevitServices.Persistence import DocumentManager
 from RevitServices.Transactions import TransactionManager
 
 
-def delete(elements: list) -> list:
+def delete(elements) -> list:
     """
     Deletes elements from the Revit DB.
     """

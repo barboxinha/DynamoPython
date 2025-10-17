@@ -53,7 +53,7 @@ def GetBuiltInParam(paramName):
     return test[0]
 
 
-def duplicate(item: object, num_times: int):
+def duplicate(item, num_times):
     """Duplicates an item a given number of times."""
     for i in range(num_times):
         yield item

@@ -17,7 +17,7 @@ import Autodesk
 from Autodesk.Revit.DB import FamilyInstance
 
 
-def flip_from_to_room(family_instance: FamilyInstance):
+def flip_from_to_room(family_instance):
     """
     Flip the Door or Window instance's From/To Room properties.
     """

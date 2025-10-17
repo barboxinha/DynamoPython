@@ -17,7 +17,7 @@ import Autodesk
 from Autodesk.Revit.DB import FamilyInstance
 
 
-def get_from_room(family_instance: FamilyInstance):
+def get_from_room(family_instance) -> Autodesk.Revit.DB.Architecture.Room:
     """
     Get the room that the Door or Window is hosted in.
     """

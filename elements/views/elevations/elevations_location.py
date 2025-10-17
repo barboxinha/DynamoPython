@@ -18,7 +18,7 @@ import Autodesk
 from Autodesk.Revit.DB import XYZ
 
 
-def elevation_location(elevation: Autodesk.Revit.DB.ViewSection) -> XYZ:
+def elevation_location(elevation) -> XYZ:
     """Get the location of the elevation in the project coordinate system."""
     # Construct a point at the midpoint of the front bottom edge of the elevation view cropbox
     xmax = elevation.CropBox.Max.X
