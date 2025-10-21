@@ -21,7 +21,7 @@ import Autodesk
 from Autodesk.Revit.DB import Document, GraphicsStyle, LinePatternElement, GraphicsStyleType
 
 
-def get_graphics_style_line_pattern_name(_doc: Document, graphics_style: GraphicsStyle):
+def get_graphics_style_line_pattern_name(_doc, graphics_style) -> str:
     """
     Gets the LinePatternElement name assigned to a given GraphicsStyle.
     """

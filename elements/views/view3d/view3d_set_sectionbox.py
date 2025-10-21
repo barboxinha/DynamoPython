@@ -28,7 +28,7 @@ from RevitServices.Transactions import TransactionManager
 
 
 # Create View3D SectionBox function
-def set_view3d_sectionbox(view3D, bBox):
+def set_view3d_sectionbox(view3D, bBox) -> View3D:
 	"""Set the section box for a given View3D element."""
 	# Rebuild BoundingBox and assign to View3D
 	new_max = bBox.MaxPoint.ToRevitType()

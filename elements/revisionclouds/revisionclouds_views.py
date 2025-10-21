@@ -22,7 +22,7 @@ from Autodesk.Revit.DB import RevisionCloud, Document, View
 
 
 # Get element OwnerView and dependent views function
-def element_views(document, element):
+def element_views(document, element) -> list:
 	"""
 	Get the OwnerView and dependent views of a given element.
 	"""

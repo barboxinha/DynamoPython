@@ -6,7 +6,6 @@ Attempts to retrieve a Dynamo category by its Revit category name.
 __author__ = "Marco Barboza"
 
 
-import sys
 import clr
 
 clr.AddReference('ProtoGeometry')
@@ -20,7 +19,6 @@ import Revit
 clr.ImportExtensions(Revit.Elements)
 
 clr.AddReference("RevitServices")
-from RevitServices.Transactions import TransactionManager
 from RevitServices.Persistence import DocumentManager
 
 
@@ -34,7 +32,7 @@ def get_dynamo_category_by_name(doc, category_name):
     try:
         for cat in categories:
             if cat.Name == category_name:
-                category = Revit.Elements.Category.ById(cat.Id.IntegerValue)
+                category = Revit.Elements.Category.ById(cat.Id.Value)
                 break
         
         if category == None:
